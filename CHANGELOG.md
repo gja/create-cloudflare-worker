@@ -9,13 +9,3 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * Git Commit doesn't fail for eslint ([b2f5b68](https://github.com/gja/create-cloudflare-worker/commit/b2f5b68))
-
-
-
-<a name="1.0.2"></a>
-## [1.0.2](https://github.com/gja/create-cloudflare-worker/compare/v1.0.1...v1.0.2) (2019-01-02)
-
-
-
-<a name="1.0.1"></a>
-## 1.0.1 (2019-01-02)
