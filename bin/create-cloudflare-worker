@@ -1,0 +1,26 @@
+#! /bin/sh -e
+
+# TODO: Move this to JS?
+
+DEST="$(pwd)/$1"
+
+EXEC_PATH="$0"
+CODE_PATH="$(cd $(dirname $EXEC_PATH); cd $(dirname $(readlink $EXEC_PATH)); cd ..; pwd)"
+cp -r "$CODE_PATH/template" "$DEST"
+
+cd "$DEST"
+
+git init
+
+# npm pack skips .gitignore and package-lock.json, so doing some hacks
+cat > .gitignore <<EOF
+/dest
+/node_modules
+EOF
+
+npm install
+git add .
+git commit -am "Initial Commit"
+
+echo "Created $1. Happy Hacking!"
+
