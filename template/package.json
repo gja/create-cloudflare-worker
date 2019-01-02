@@ -5,21 +5,10 @@
   "description": "A Cloudflare Worker",
   "scripts": {
     "build": "webpack --mode production",
+    "deploy": "npm run build && curl \"https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/workers/scripts/$CF_WORKER_NAME\" -X PUT -H \"X-Auth-Email: $CF_EMAIL\" -H \"X-Auth-Key: $CF_AUTH_KEY\" -F 'script=@-;type=application/javascript' -F 'metadata={\"body_part\": \"script\", \"bindings\": []};type=application/json' < dist/main.js",
     "test": "jest",
     "watch": "webpack --mode production --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gja/cloudflare-worker-starter-kit.git"
-  },
-  "keywords": [
-    "cloudflare",
-    "worker"
-  ],
-  "bugs": {
-    "url": "https://github.com/gja/cloudflare-worker-starter-kit/issues"
-  },
-  "homepage": "https://github.com/gja/cloudflare-worker-starter-kit#readme",
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",

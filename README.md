@@ -44,6 +44,16 @@ And finally, to execute the integration and unit tests, run
 npm test
 ```
 
+### Deploying
+
+This project may be used to deploy your newly built worker to cloudflare as follows:
+
+```bash
+CF_ACCOUNT=acct-id CF_WORKER_NAME=worker-name CF_EMAIL=you@you.com CF_AUTH_KEY=auth-key npm run deploy
+```
+
+However, you may also just copy dist/main.js and paste it into the CF worker dashboard (or even terraform it)
+
 ### Examples
 
 We will add recipes here
@@ -53,6 +63,10 @@ We will add recipes here
 ### Adding a Key Value Store
 
 FIXME: How to add a KeyValue namespace
+
+- Curl to create the KV Namespace
+- Update the deploy step in package.json to bind the KV namespace
+- Create a test KV namespace in code.
 
 ### Contributing
 - Fork this Repo first
