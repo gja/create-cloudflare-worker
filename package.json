@@ -1,0 +1,32 @@
+{
+  "name": "create-cloudflare-worker",
+  "version": "1.0.0",
+  "description": "A Starter Kit for Building a Cloudflare Worker",
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "jest",
+    "watch": "webpack --mode production --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gja/cloudflare-worker-starter-kit.git"
+  },
+  "keywords": [
+    "cloudflare",
+    "worker"
+  ],
+  "author": "Tejas Dinkar <tejas@gja.in>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gja/cloudflare-worker-starter-kit/issues"
+  },
+  "homepage": "https://github.com/gja/cloudflare-worker-starter-kit#readme",
+  "devDependencies": {
+    "cloudflare-worker-local": "^1.7.0",
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "supertest": "^3.3.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2"
+  }
+}
