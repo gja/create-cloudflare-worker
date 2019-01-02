@@ -1,3 +1,6 @@
+// Add any more global vars (like Request, Response) to the below list as they are used
+/* global addEventListener fetch */
+
 addEventListener("fetch", e => {
   e.respondWith(fetchAndAddHeader(e.request));
 });

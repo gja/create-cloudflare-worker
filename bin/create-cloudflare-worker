@@ -20,7 +20,7 @@ EOF
 
 npm install
 git add .
-git commit -am "Initial Commit"
+git commit -nam "Initial Commit"
 
 echo "Created $1. Happy Hacking!"
 
