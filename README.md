@@ -72,11 +72,25 @@ We will add recipes here
 
 ### Adding a Key Value Store
 
-FIXME: How to add a KeyValue namespace
+This project can also mock an in memory KV Store. This can be done as follows
 
-- Curl to create the KV Namespace
-- Update the deploy step in package.json to bind the KV namespace
-- Create a test KV namespace in code.
+- Add the kv store (ex: MYSTORE) to the list of global variables of the worker
+- When running the worker, start the worker with the `KV_NAMESPACES` as follows `KV_NAMESPACES=MYSTORE,OTHER_STORE npm start`
+- In tests, namespaces can be created as an option to createTestApp as follows: `const app = createTestApp(workerContents, upstreamApp, { kvStores: ["MYSTORE"] })`. The new store can be accessed in tests as follows: `await app.stores.MYSTORE.put("key", "value")`. `await app.stores.MYSTORE.get("key")`
+
+When you are ready to deploy your new worker with a KV:
+
+- run curl to create the worker namespace (this should only be done once)
+```bash
+# If this fails, contact support
+curl "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/workers/namespaces" -X POST -H "X-Auth-Email: $CF_EMAIL" -H "X-Auth-Key: $AUTH_KEY" -H "Content-Type: application/json" --data '{"title": "your-namespace"}'
+# {"result":{"id": "<some-id>","title":"your-namespace"}}
+```
+- Bind this namespace in the deploy script in package.json. Find the bindings section in the deploy script, and replace it with something like this
+```
+\"bindings\":[{\"name\":\"MYSTORE\",\"type\":\"kv_namespace\",\"namespace_id\":\"$MYSTORE_ID\"}]
+```
+- Finally, run your deploy script with the MYSTORE_ID variable set to the id returned by the curl command.
 
 ### Contributing
 - Fork this Repo first
