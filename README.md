@@ -44,6 +44,16 @@ And finally, to execute the integration and unit tests, run
 npm test
 ```
 
+### Running the worker locally
+
+To run the worker locally, run
+
+```bash
+npm start
+```
+
+This will start the worker on port 4000, and forward all requests to the upstream server at `http://localhost:3000`. This will allow you to develop your application in tandem with the worker that will front the application.
+
 ### Deploying
 
 This project may be used to deploy your newly built worker to cloudflare as follows:
