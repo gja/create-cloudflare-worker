@@ -2,20 +2,57 @@
 
 > A Starter Kit for Building a Cloudflare Worker
 
-### Installation
+### Creating an App
+
+To create a new worker with `create-cloudflare-worker`, run the following
 
 ```bash
-$ npm install create-cloudflare-worker
+npm init cloudflare-worker your-worker-name
 ```
 
-### Example
+or, with `npx`
 
-```js
-const createCloudflareWorker = require('create-cloudflare-worker');
-
-// your code here
-
+```bash
+npx create-cloudflare-worker your-worker-name
 ```
+
+Once the installation is done, you can open your project folder:
+
+```bash
+cd my-app
+```
+
+### Building and testing your new worker
+
+To build the worker, run
+
+```bash
+npm run build
+```
+
+This outputs the worker as `dist/main.js`.
+
+To continually build the worker on every change, run
+
+```bash
+npm run watch
+```
+
+And finally, to execute the integration and unit tests, run
+
+```bash
+npm test
+```
+
+### Examples
+
+We will add recipes here
+- Building a API service with react-router
+- Parsing Cookies
+
+### Adding a Key Value Store
+
+FIXME: How to add a KeyValue namespace
 
 ### Contributing
 - Fork this Repo first
