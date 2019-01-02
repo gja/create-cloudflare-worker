@@ -1,6 +1,6 @@
 {
   "name": "create-cloudflare-worker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a Cloudflare worker",
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
     "url": "https://github.com/gja/create-cloudflare-worker/issues"
   },
   "bin": "./bin/create-cloudflare-worker",
-  "homepage": "https://github.com/gja/create-cloudflare-worker#readme"
+  "homepage": "https://github.com/gja/create-cloudflare-worker#readme",
+  "devDependencies": {
+    "standard-version": "^4.4.0"
+  }
 }
