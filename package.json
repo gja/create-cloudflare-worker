@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/gja/cloudflare-worker-starter-kit#readme",
   "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "cloudflare-worker-local": "^1.7.0",
     "express": "^4.16.4",
     "jest": "^23.6.0",

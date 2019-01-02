@@ -1,9 +1,9 @@
-const { createTestApp } = require("cloudflare-worker-local");
-const supertest = require("supertest");
-const express = require("express");
-const fs = require("fs");
+import { createTestApp } from "cloudflare-worker-local";
+import supertest from "supertest";
+import express from "express";
+import fs from "fs";
 
-const workerContent = fs.readFileSync(`${__dirname}/dist/main.js`);
+const workerContent = fs.readFileSync(`${__dirname}/../../dist/main.js`);
 
 describe("My New Worker", () => {
   it("Adds a header on 200 responses", async () => {
