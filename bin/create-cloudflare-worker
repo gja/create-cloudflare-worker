@@ -14,7 +14,7 @@ git init
 
 # npm pack skips .gitignore and package-lock.json, so doing some hacks
 cat > .gitignore <<EOF
-/dest
+/dist
 /node_modules
 EOF
 
