@@ -83,7 +83,12 @@ When you are ready to deploy your new worker with a KV:
 - run curl to create the worker namespace (this should only be done once)
 ```bash
 # If this fails, contact support
-curl "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/workers/namespaces" -X POST -H "X-Auth-Email: $CF_EMAIL" -H "X-Auth-Key: $AUTH_KEY" -H "Content-Type: application/json" --data '{"title": "your-namespace"}'
+curl "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/workers/namespaces" \
+  -X POST \
+  -H "X-Auth-Email: $CF_EMAIL" \
+  -H "X-Auth-Key: $AUTH_KEY" \
+  -H "Content-Type: application/json" \
+  --data '{"title": "your-namespace"}'
 # {"result":{"id": "<some-id>","title":"your-namespace"}}
 ```
 - Bind this namespace in the deploy script in package.json. Find the bindings section in the deploy script, and replace it with something like this
