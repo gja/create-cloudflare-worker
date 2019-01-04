@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/gja/create-cloudflare-worker/compare/v1.1.3...v1.1.4) (2019-01-04)
+
+
+### Bug Fixes
+
+* **Testing:** Upgraded to the latest cloudflare-worker-local, which exposes stores ([8729ee5](https://github.com/gja/create-cloudflare-worker/commit/8729ee5))
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/gja/create-cloudflare-worker/compare/v1.1.2...v1.1.3) (2019-01-04)
 
