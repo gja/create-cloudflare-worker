@@ -5,7 +5,7 @@
   "description": "A Cloudflare Worker",
   "scripts": {
     "build": "webpack --mode production",
-    "deploy": "npm run build && curl \"https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/workers/scripts/$CF_WORKER_NAME\" -X PUT -H \"X-Auth-Email: $CF_EMAIL\" -H \"X-Auth-Key: $CF_AUTH_KEY\" -F 'script=@-;type=application/javascript' -F 'metadata={\"body_part\": \"script\", \"bindings\": []};type=application/json' < dist/main.js",
+    "deploy": "npm run build && curl \"https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/workers/scripts/$CF_WORKER_NAME\" -X PUT -H \"X-Auth-Email: $CF_EMAIL\" -H \"X-Auth-Key: $CF_AUTH_KEY\" -F 'script=@-;type=application/javascript' -F \"metadata={\\\"body_part\\\": \\\"script\\\", \\\"bindings\\\": []};type=application/json\" < dist/main.js",
     "start": "npm run build && npx nodemon --watch dist/main.js --exec \"cloudflare-worker-local dist/main.js localhost:3000 4000\" --signal SIGHUP",
     "test": "jest",
     "watch": "webpack --mode production --watch"

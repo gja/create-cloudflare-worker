@@ -88,7 +88,7 @@ curl "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/workers/namespac
 ```
 - Bind this namespace in the deploy script in package.json. Find the bindings section in the deploy script, and replace it with something like this
 ```
-\"bindings\":[{\"name\":\"MYSTORE\",\"type\":\"kv_namespace\",\"namespace_id\":\"$MYSTORE_ID\"}]
+\\\"bindings\\\":[{\\\"name\\\":\\\"MYSTORE\\\",\\\"type\\\":\\\"kv_namespace\\\",\\\"namespace_id\\\":\\\"$MYSTORE_ID\\\"}]
 ```
 - Finally, run your deploy script with the MYSTORE_ID variable set to the id returned by the curl command.
 
