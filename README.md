@@ -22,6 +22,9 @@ Once the installation is done, you can open your project folder:
 cd my-app
 ```
 
+NOTE: Prerequisites: `create-cloudflare-worker` needs Node v10 or higher.
+
+
 ### Building and testing your new worker
 
 To build the worker, run
