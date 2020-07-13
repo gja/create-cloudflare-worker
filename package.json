@@ -18,7 +18,7 @@
   "bin": "./bin/create-cloudflare-worker",
   "homepage": "https://github.com/gja/create-cloudflare-worker#readme",
   "devDependencies": {
-    "standard-version": "^4.4.0"
+    "standard-version": "^8.0.1"
   },
   "scripts": {
     "prepublishOnly": "npm install && git diff --quiet && npx standard-version && git push --follow-tags origin"
